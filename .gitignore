@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+venv*/
+.venv/
+
+# outputs and caches
+outputs*/
+*.cache.pkl
+*.log
+
+# never commit data or credentials
+data/
+*.wav
+*.mp4
+*.mkv
+*.jpg
+*.tiff
+*.arrow
+node_hostvars.yml
+.env
