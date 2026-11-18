@@ -1,0 +1,50 @@
+==============================================================================
+LEAVE-ONE-OUT CV — vitrectomy phase recognition
+==============================================================================
+
+Per-fold accuracy:
+  fold 0  acc=0.9088   (2028 frames)
+  fold 1  acc=0.9456   (1967 frames)
+  fold 2  acc=0.9183   (1837 frames)
+  fold 3  acc=0.9503   (1749 frames)
+  fold 4  acc=0.9522   (2364 frames)
+  fold 5  acc=0.8998   (2276 frames)
+  fold 6  acc=0.8371   (1891 frames)
+  fold 7  acc=0.8470   (2405 frames)
+
+  mean fold accuracy : 0.9074  (sample std 0.0448)
+  pooled frame accuracy: 0.9064  (16517 frames over all folds)
+
+Segmental metrics (Lea et al. 2017):
+   fold    Edit   F1@10   F1@25   F1@50
+      0    9.43   17.24   17.24   13.79
+      1   29.41   45.45   45.45   45.45
+      2   23.81   38.46   38.46   38.46
+      3   22.73   37.04   37.04   37.04
+      4  100.00  100.00  100.00  100.00
+      5    9.43   17.24   17.24   13.79
+      6   12.82   22.73   22.73   18.18
+      7   13.16   23.26   23.26   18.60
+   mean   27.60   37.68   37.68   35.67
+    std   30.17   27.29   27.29   28.78
+
+Pooled confusion matrix (rows = true, cols = predicted):
+                Room_Prep  Patient_En  Sterile_Dr  Microsurge   Emergence   total
+   Room_Prep         1752           0           0           0           0    1752
+Patient_Entry          131        2664          70           0          41    2906
+Sterile_Draping            0         238        3152          54         602    4046
+Microsurgery            0           0         249        5515          27    5791
+   Emergence            0           0           0         134        1888    2022
+
+Per-class precision / recall / f1 (pooled):
+                 precision    recall  f1-score   support
+
+      Room_Prep      0.930     1.000     0.964      1752
+  Patient_Entry      0.918     0.917     0.917      2906
+Sterile_Draping      0.908     0.779     0.839      4046
+   Microsurgery      0.967     0.952     0.960      5791
+      Emergence      0.738     0.934     0.824      2022
+
+       accuracy                          0.906     16517
+      macro avg      0.892     0.916     0.901     16517
+   weighted avg      0.912     0.906     0.906     16517

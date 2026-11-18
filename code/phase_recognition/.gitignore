@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+*~
+
+# Environment
+venv_tecno/
+venv/
+.venv/
+
+# Data (raw recordings, dataframes, exported features) — never committed
+data/
+
+# Training outputs (checkpoints, feature exports, TensorBoard logs, reports)
+outputs/
+logs/
+lightning_logs/
+*.ckpt
+*.pt
+*.pth
