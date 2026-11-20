@@ -1,0 +1,6 @@
+phase_id,phase_name,start_sec,end_sec
+0,Room_Prep,105,326
+1,Patient_Entry,326,668
+2,Sterile_Draping,668,1072
+3,Microsurgery,1072,1638
+4,Emergence,1638,1854

@@ -1,0 +1,16 @@
+# Pinned environment for the vitrectomy LOO-CV pipeline.
+# Versions match the working local venv (venv_tecno). torch is intentionally
+# left without the +cpu local tag: on a GPU server, plain `pip install torch`
+# resolves to the CUDA build automatically.
+torch==2.11.0
+torchvision==0.26.0
+torchmetrics==1.9.0
+pytorch-lightning==1.9.5
+numpy==2.4.3
+pandas==3.0.2
+scikit-learn==1.8.0
+matplotlib==3.10.8
+pillow==12.1.1
+ConfigArgParse==1.7.5
+tensorboard==2.20.0
+pyarrow==24.0.0

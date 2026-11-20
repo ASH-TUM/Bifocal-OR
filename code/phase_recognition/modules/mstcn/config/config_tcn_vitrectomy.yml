@@ -1,0 +1,35 @@
+module : mstcn.tecno.TeCNO
+model : mstcn.MultiStageModel
+# After Stage 1, data_root MUST be set to the vitrectomy_pickle_export folder
+# printed at the end of the CNN run. run_loo_cv.sh / run_expAB.sh do this
+# automatically via --data_root, so the value below is only a sensible
+# placeholder for manual single-fold runs. Example:
+#   data_root : outputs/<timestamp>_FeatureExtraction_.../vitrectomy_pickle_export
+data_root : outputs/REPLACE_WITH_STAGE1_OUTPUT/vitrectomy_pickle_export
+dataset : vitrectomy.Vitrectomy
+out_features : 5
+num_workers : 4
+batch_size : 1
+features_per_seconds : 1.0
+features_subsampling : 1.0
+log_every_n_steps : 1
+mstcn_causal_conv : True
+learning_rate : 0.00007
+min_epochs : 10
+max_epochs : 30
+mstcn_layers : 8
+mstcn_f_maps : 32
+mstcn_f_dim : 2048
+mstcn_stages : 2
+output_path : outputs
+early_stopping_metric : val_acc
+early_stopping_patience : 30
+save_top_k : 1
+num_sanity_val_steps : 0
+# `gpu` instead of `auto`: fail loud if CUDA isn't available.
+accelerator : gpu
+
+# Held-out video for LOO cross-validation (run_loo_cv.sh overrides via --test_fold)
+test_fold : 8
+# Base RNG seed; effective per-fold seed = seed + test_fold
+seed : 5678
